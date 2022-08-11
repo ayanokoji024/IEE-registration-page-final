@@ -1,0 +1,202 @@
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Form</title>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+</head>
+
+<body>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <!-- Body of Form starts -->
+    <div class="container">
+        <h1 class="title1">MLAS 2.0 REGISTRATION</h1>
+        <p class="title">The Machine Learning (ML) Accelerator is IEEE JU SB's flagship event to
+            sow the seeds of interest and information about ML in young minds and tech aficionados.</p>
+        <h4 class="title">Ticket Price :- <br>
+            Non-IEEE member : INR 399 <br>
+            IEEE member: INR 249
+        </h4>
+
+        <!--Images-->
+
+        <table style="float:center">
+            <tr>
+                <td><img src="/images/logo.png" width="200" height="200"></td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td><img src="/images/t-shirt.png" width="200" height="200"></td>
+            </tr>
+        </table>
+
+        <!--Images-->
+
+        <form method="post" name="frm1" id="frm1" autocomplete="on">
+            <!--First name-->
+            <div class="box">
+                <label for="name" class="fl fontLabel"> Your Name: </label>
+                <div class="fr">
+                    <input type="text" name="name" id="name" placeholder="Your Name" class="textBox" autofocus="on"
+                        required>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <!--First name-->
+
+
+            <!---Email ID---->
+            <div class="box">
+                <label for="email" class="fl fontLabel"> Email ID: </label>
+                <div class="fr">
+                    <input type="email" required name="email" id="email" placeholder="Email Id" class="textBox">
+                </div>
+                <div class="clr"></div>
+            </div>
+            <!---Email ID---->
+
+            <!---Phone No.------>
+            <div class="box">
+                <label for="phone" class="fl fontLabel"> Your Contact No.: </label>
+                <div class="fr">
+                    <input type="text" required name="phoneNo" id="phoneNo" maxlength="10" placeholder="Phone No."
+                        class="textBox">
+                </div>
+                <div class="clr"></div>
+            </div>
+            <!---Phone No.---->
+
+
+            <!---Department------>
+            <div class="box">
+                <label for="dept" class="fl fontLabel"> Your Department: </label>
+                <div class="fr">
+                    <input type="text" required name="dept" id="year" placeholder="Department" class="textBox">
+                </div>
+                <div class="clr"></div>
+            </div>
+            <!---Department---->
+
+
+            <!---Current Year------>
+            <div class="box radio">
+                <label for="size" class="fl fontLabel"> Your Current Year: </label>
+                <br><input type="radio" name="year" id="year" value="1" required> 1st &nbsp;
+                <!--&nbsp; &nbsp; &nbsp; &nbsp;-->
+                <input type="radio" name="year" id="year" value="2" required> 2nd &nbsp;
+                <input type="radio" name="year" id="year" value="3" required> 3rd &nbsp;
+                <input type="radio" name="year" id="year" value="4" required> 4th &nbsp;
+                <br>
+            </div>
+
+
+            <!---Current Year---->
+
+            <!---member----->
+            <div class="box radio">
+                <label for="member" class="fl fontLabel"> Are you an IEEE member? </label>
+                <br><input type="radio" name="member" id="member" value="Yes" required> Yes &nbsp;
+                <!--&nbsp; &nbsp; &nbsp;-->
+                <input type="radio" name="member" id="member" value="No" required> No
+                <br>
+            </div>
+            <!---member--->
+
+            <!--prefer----->
+            <div class="box radio">
+                <label for="food" class="fl fontLabel"> Do you prefer veg or non-veg? </label>
+                <br><input type="radio" name="food" id="food" value="Veg" required> Veg &nbsp;
+                <!--&nbsp; &nbsp; &nbsp; &nbsp;-->
+                <input type="radio" name="food" id="food" value="Non-veg" required> Non-Veg
+                <br>
+            </div>
+            <!---prefer--->
+
+            <!--size----->
+            <div class="box radio">
+                <label for="size" class="fl fontLabel"> Select your T-Shirt size: </label>
+                <br><input type="radio" name="size" id="size" value="M" required> M &nbsp;
+                <!--&nbsp; &nbsp; &nbsp; &nbsp;-->
+                <input type="radio" name="size" id="size" value="L" required> L &nbsp;
+                <input type="radio" name="size" id="size" value="XL" required> XL &nbsp;
+                <input type="radio" name="size" id="size" value="XXL" required> XXL &nbsp;
+                <br>
+            </div>
+            <!--size--->
+
+
+
+            <!---Register Button------>
+            <div class="box">
+                <input type="Submit" name="Register" id="Register" class="submit" value="Register">
+            </div>
+            <!---Register Button----->
+    </div>
+
+
+    </form>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBeejy9LXWCdbYz4Az7Fv4XpdCMVbBugLQ",
+            authDomain: "test-50ac8.firebaseapp.com",
+            databaseURL: "https://test-50ac8-default-rtdb.firebaseio.com",
+            projectId: "test-50ac8",
+            storageBucket: "test-50ac8.appspot.com",
+            messagingSenderId: "103465655769",
+            appId: "1:103465655769:web:b3d1ab5ad9f52d6b808dc8"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+        var messagesRef = firebase.database()
+            .ref('Collected Data');
+
+        document.getElementById('frm1')
+            .addEventListener('Register', submitForm);
+
+        function submitForm(e) {
+            e.preventDefault();
+
+            // Get values
+            var name = getInputVal('name');
+            var email = getInputVal('email');
+            var phone = getInputVal("phoneNo");
+            var year = parseInt(getInputVal("year"));
+            var member = getInputVal("member");
+            var food = getInputVal("food");
+            var size = getInputVal("size");
+            saveMessage(name, email, phone, year, member, food, size);
+            document.getElementById('frm1').reset();
+        }
+
+        // Function to get get form values
+        function getInputVal(id) {
+            return document.getElementById(id).value;
+        }
+
+        // Save message to firebase
+        function saveMessage(name, email, phone, year, member, food, size) {
+            var newMessageRef = messagesRef.push();
+            newMessageRef.set({
+                name: name,
+                email: email,
+                phone: phone,
+                year: year,
+                member: member,
+                food: food,
+                size: size,
+            });
+        }
+    </script>
+    <!--Body of Form ends--->
+</body>
+
+</html>
