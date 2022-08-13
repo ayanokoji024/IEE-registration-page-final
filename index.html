@@ -1,4 +1,3 @@
-
 <html>
 
 <head>
@@ -10,8 +9,9 @@
 
 <body>
     <link href="styles.css" type="text/css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+
     <!-- Body of Form starts -->
     <div class="container">
         <h1 class="title1">MLAS 2.0 REGISTRATION</h1>
@@ -133,7 +133,8 @@
 
             <!---Register Button------>
             <div class="box">
-                <input type="Submit" name="Register" id="Register" class="submit" value="Register">
+                <br>
+                <input type="Submit" name="Register" id="Register" class="button-20" value="Register">
             </div>
             <!---Register Button----->
     </div>
@@ -141,23 +142,24 @@
 
     </form>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
 
     <script>
         const firebaseConfig = {
-            apiKey: "AIzaSyBeejy9LXWCdbYz4Az7Fv4XpdCMVbBugLQ",
-            authDomain: "test-50ac8.firebaseapp.com",
-            databaseURL: "https://test-50ac8-default-rtdb.firebaseio.com",
-            projectId: "test-50ac8",
-            storageBucket: "test-50ac8.appspot.com",
-            messagingSenderId: "103465655769",
-            appId: "1:103465655769:web:b3d1ab5ad9f52d6b808dc8"
+            apiKey: "AIzaSyD44b0uF8dVMuwgMif2hGARISSsrZg2TEg",
+            authDomain: "test1-f9cb7.firebaseapp.com",
+            projectId: "test1-f9cb7",
+            databaseURL : "https://console.firebase.google.com/u/1/project/test1-f9cb7/database/test1-f9cb7-default-rtdb/data/~2F",
+            storageBucket: "test1-f9cb7.appspot.com",
+            messagingSenderId: "135952121044",
+            appId: "1:135952121044:web:019fc00d72f318ec358f41",
+            measurementId: "G-K09YVB9RMT"
         };
 
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
         firebase.initializeApp(firebaseConfig);
 
-        var messagesRef = firebase.database()
-            .ref('Collected Data');
+        var messagesRef = firebase.database().ref('Collected Data');
 
         document.getElementById('frm1')
             .addEventListener('Register', submitForm);
@@ -197,6 +199,8 @@
         }
     </script>
     <!--Body of Form ends--->
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-database.js"></script>
 </body>
 
 </html>
