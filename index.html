@@ -10,7 +10,7 @@
 <body>
     <link href="styles.css" type="text/css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+
 
     <!-- Body of Form starts -->
     <div class="container">
@@ -145,14 +145,14 @@
 
     <script>
         const firebaseConfig = {
-            apiKey: "AIzaSyD44b0uF8dVMuwgMif2hGARISSsrZg2TEg",
-            authDomain: "test1-f9cb7.firebaseapp.com",
-            projectId: "test1-f9cb7",
-            databaseURL : "https://console.firebase.google.com/u/1/project/test1-f9cb7/database/test1-f9cb7-default-rtdb/data/~2F",
-            storageBucket: "test1-f9cb7.appspot.com",
-            messagingSenderId: "135952121044",
-            appId: "1:135952121044:web:019fc00d72f318ec358f41",
-            measurementId: "G-K09YVB9RMT"
+            apiKey: "AIzaSyCme_qf4YZVpQwK19RrK0ilRhISLh9pSRQ",
+            authDomain: "ieee-registration-page-final.firebaseapp.com",
+            databaseURL: "https://ieee-registration-page-final-default-rtdb.firebaseio.com",
+            projectId: "ieee-registration-page-final",
+            storageBucket: "ieee-registration-page-final.appspot.com",
+            messagingSenderId: "75815453225",
+            appId: "1:75815453225:web:65bdf20c91c63670045238",
+            measurementId: "G-ZG8DVMF4WM"
         };
 
         // Initialize Firebase
@@ -168,8 +168,8 @@
             e.preventDefault();
 
             // Get values
-            var name = getInputVal('name');
-            var email = getInputVal('email');
+            var name = getInputVal("name");
+            var email = getInputVal("email");
             var phone = getInputVal("phoneNo");
             var year = parseInt(getInputVal("year"));
             var member = getInputVal("member");
